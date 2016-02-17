@@ -2,7 +2,7 @@
   (:require [guestbook.layout :as layout]
             [compojure.core :refer [defroutes GET POST]]
             [ring.util.http-response :as response]
-            [clojure.java.io :as io]))
+            [guestbook.db.core :as db]))
 
 (defn home-page []
   (layout/render
@@ -14,6 +14,6 @@
 
 (defroutes home-routes
   (GET "/" [] (home-page))
-  (POST "/message" request (save-message! request))
+  (POST "/message" request (db/save-message! request))
   (GET "/about" [] (about-page)))
 
