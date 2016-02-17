@@ -13,4 +13,22 @@
     </ul>
   </div>
 </div>
+<div class="row">
+  <div class="span12">
+    <form action="/message" method="POST">
+      <div class="form-group">
+        {% csrf-field %}
+        <p>
+          Name:
+          <input type="text" name="name" class="form-control" value="" />
+        </p>
+        <p>
+          Message:
+          <textarea name="message" id="message" cols="50" rows="4" class="form-control"></textarea>
+        </p>
+        <input type="submit" value="comment" class="btn btn-primary" />
+      </div>
+    </form>
+  </div>
+</div>
 {% endblock %}
