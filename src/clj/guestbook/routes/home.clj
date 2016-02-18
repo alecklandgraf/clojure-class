@@ -4,6 +4,7 @@
             [ring.util.http-response :as response]
             [guestbook.db.core :as db]
             [bouncer.core :as b]
+            [clojure.pprint :refer [pprint]]
             [bouncer.validators :as v]))
 
 (defn home-page [{:keys [flash]}]
